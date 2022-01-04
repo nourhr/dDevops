@@ -28,3 +28,4 @@ public interface UserRepository extends  CrudRepository<User, Long> {
 //		void insertUser(@Param("fn") String fn, @Param("ln") Integer ln, @Param("role") Integer role);
 	
 }
+//try
