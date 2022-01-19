@@ -66,6 +66,13 @@ public class Produit {
 		this.expDate = expDate;
 	}
 
+	public Produit(String name, String description, Date expDate) {
+		super();
+		this.name = name;
+		this.description = description;
+		this.expDate = expDate;
+	}
+
 	public Produit() {
 		super();
 		// TODO Auto-generated constructor stub
