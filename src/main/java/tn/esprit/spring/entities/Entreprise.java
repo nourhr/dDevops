@@ -2,6 +2,7 @@ package tn.esprit.spring.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +18,7 @@ public class Entreprise implements Serializable {
 	private Long id;
 	
 	private String Name;
+	@Column(unique = true)
 	private String StatutFiscal;
 	public Long getId() {
 		return id;
@@ -49,6 +51,10 @@ public class Entreprise implements Serializable {
 		super();
 		Name = name;
 		StatutFiscal = statutFiscal;
+	}
+	@Override
+	public String toString() {
+		return "Entreprise [id=" + id + ", Name=" + Name + ", StatutFiscal=" + StatutFiscal + "]";
 	}
 	
 	

@@ -35,7 +35,7 @@ try {
 
 	@Override
 	public Entreprise addEntreprise(Entreprise ent) {
-		Entreprise savedE = null; 
+		Entreprise savedE = ent; 
 		try {
 			l.info("In Methode AddEntreprise");
 			 savedE = EntrepriseRepo.save(ent); 
@@ -47,19 +47,7 @@ try {
 		return  savedE;
 	}
 
-	@Override
-	public void deleteEntreprise(String id) {
-		try {
-		    l.info("In Methode delete Entreprise:"+id);
-			EntrepriseRepo.deleteById(Long.parseLong(id)); 
-			l.info("Entreprise was deleted successfully");
-			
-		} catch (Exception e) {
-			l.error("error with Methode delete Entreprise : " + e);
-		}
-		
-		
-	}
+	
 
 	@Override
 	public Entreprise updateEntreprise(Entreprise ent) {
@@ -76,12 +64,15 @@ try {
 		return entUpdated;
 	}
 
+	
+	
+
 	@Override
-	public Entreprise retrieveEntreprise(String id) {
+	public Entreprise retrieveEntreprise(long id) {
 		Entreprise ent = null;
 		try {
 			l.info("In Methode retrieve Entreprise:"+id);
-			ent =  EntrepriseRepo.findById(Long.parseLong(id)).get(); 
+			ent =  EntrepriseRepo.findById(id).get(); 
 			l.info("Entreprise retrieved");
 			
 		} catch (Exception e) {
@@ -90,5 +81,21 @@ try {
 		
 		return ent;
 	}
+
+	@Override
+	public void deleteEntreprise(Long id) {
+		try {
+		    l.info("In Methode delete Entreprise:"+id);
+			EntrepriseRepo.deleteById(id); 
+			l.info("Entreprise was deleted successfully");
+			
+		} catch (Exception e) {
+			l.error("error with Methode delete Entreprise : " + e);
+		}
+		
+		
+	}
+
+
 
 }

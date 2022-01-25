@@ -54,14 +54,14 @@ public class EntrepriseServiceImplTest {
 	@Test
 	@Order(5)
 	public void testRetrieveEntreprise(){
-		Entreprise EntRetrived = IE.retrieveEntreprise("3");
+		Entreprise EntRetrived = IE.retrieveEntreprise((long) 3);
 		Assertions.assertEquals(1L, EntRetrived.getId());
 	}
 	
 	@Test
 	@Order(6)
 	public void testDeletEntreprise(){
-		IE.deleteEntreprise("2");
+		IE.deleteEntreprise((long)2);
 	
 		List<Entreprise> listEntreprises = IE.retrieveAllEntreprises();
 		Assertions.assertEquals(0, listEntreprises.size());
