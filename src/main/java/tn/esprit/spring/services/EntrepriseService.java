@@ -35,7 +35,7 @@ try {
 
 	@Override
 	public Entreprise addEntreprise(Entreprise ent) {
-		Entreprise savedE = ent; 
+		Entreprise savedE = null; 
 		try {
 			l.info("In Methode AddEntreprise");
 			 savedE = EntrepriseRepo.save(ent); 
