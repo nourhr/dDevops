@@ -48,5 +48,5 @@ public class EntrepriseRestController {
 public void deleteEntreprise (@PathVariable Long id){
 	agent.deleteEntreprise(id);
 }
-
+//jiujg
 }
