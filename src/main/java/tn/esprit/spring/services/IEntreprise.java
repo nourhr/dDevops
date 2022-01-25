@@ -8,8 +8,8 @@ import tn.esprit.spring.entities.User;
 public interface IEntreprise {
 	List<Entreprise> retrieveAllEntreprises(); 
 	Entreprise addEntreprise(Entreprise ent);
-	void deleteEntreprise(String id);
+	void deleteEntreprise(Long id);
 	Entreprise updateEntreprise(Entreprise ent);
-	Entreprise retrieveEntreprise(String id);
+	Entreprise retrieveEntreprise(long id);
 
 }
