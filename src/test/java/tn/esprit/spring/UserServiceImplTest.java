@@ -69,7 +69,7 @@ public class UserServiceImplTest {
 	@Test
 	@Order(5)
 	public void testRetrieveUser() {
-		int l = 7 + us.retrieveAllUsers().size();
+		int l = 5 + us.retrieveAllUsers().size();
 		User userRetieved = us.retrieveUser((long) l);
 		Assertions.assertEquals(l, userRetieved.getId());
 	}
@@ -77,7 +77,7 @@ public class UserServiceImplTest {
 	@Test
 	@Order(6)
 	public void testDeletUser() {
-		int l = 7 + us.retrieveAllUsers().size();
+		int l = 5 + us.retrieveAllUsers().size();
 		us.deleteUser((long) l);
 		List<User> listUserss = us.retrieveAllUsers();
 		int i = us.retrieveAllUsers().size() - 1;
