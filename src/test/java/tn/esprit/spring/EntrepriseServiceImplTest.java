@@ -30,7 +30,9 @@ public class EntrepriseServiceImplTest {
 	@Test
 	@Order(2)
 	public void testAddEntreprise() throws ParseException {
-		Entreprise ent = new Entreprise("perolla", "jhutge2");
+		Long l = (long) (6 + IE.retrieveAllEntreprises().size());
+
+		Entreprise ent = new Entreprise(l,"perolla", "jhutge2");
 		Entreprise entAded = IE.addEntreprise(ent);
 		Assertions.assertEquals(ent.getName(), entAded.getName());
 	}
@@ -49,7 +51,8 @@ public class EntrepriseServiceImplTest {
 	@Test
 	@Order(4)
 	public void testUpdateEntreprise() throws ParseException {
-		Entreprise e = new Entreprise(1L, "MB", "1548dsf");
+		Long l = (long) (6 + IE.retrieveAllEntreprises().size());
+		Entreprise e = new Entreprise(l, "MB", "1548dsf");
 		Entreprise entAded = IE.addEntreprise(e);
 		Assertions.assertEquals(e.getName(), entAded.getName());
 	}
@@ -57,7 +60,7 @@ public class EntrepriseServiceImplTest {
 	@Test
 	@Order(5)
 	public void testRetrieveEntreprise() {
-		int l = 7 + IE.retrieveAllEntreprises().size();
+		int l = 5 + IE.retrieveAllEntreprises().size();
 		Entreprise EntRetrived = IE.retrieveEntreprise((long) l);
 		Assertions.assertEquals(l, EntRetrived.getId());
 	}
@@ -65,7 +68,7 @@ public class EntrepriseServiceImplTest {
 	@Test
 	@Order(6)
 	public void testDeletEntreprise() {
-		int l = 7 + IE.retrieveAllEntreprises().size();
+		int l = 5 + IE.retrieveAllEntreprises().size();
 		IE.deleteEntreprise((long) l);
 		int i = IE.retrieveAllEntreprises().size() - 1;
 		List<Entreprise> listEntreprises = IE.retrieveAllEntreprises();

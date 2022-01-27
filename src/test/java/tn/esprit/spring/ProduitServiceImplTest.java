@@ -69,7 +69,7 @@ public class ProduitServiceImplTest {
 	@Test
 	@Order(5)
 	public void testRetrieveProduct() {
-		int l = 5 + agent.retrieveAllProduit().size();
+		int l = 3 + agent.retrieveAllProduit().size();
 		Produit p = agent.retrieveProduit((long) l);
 		Assertions.assertEquals(l, p.getIdProduit());
 	}
@@ -77,7 +77,7 @@ public class ProduitServiceImplTest {
 	@Test
 	@Order(6)
 	public void testDeleteProduct() {
-		int l = 5 + agent.retrieveAllProduit().size();
+		int l = 3 + agent.retrieveAllProduit().size();
 		agent.deleteProduit((long) l);
 		int i = agent.retrieveAllProduit().size() - 1;
 		List<Produit> listProduct = agent.retrieveAllProduit();
