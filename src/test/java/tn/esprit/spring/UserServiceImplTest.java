@@ -29,7 +29,7 @@ public class UserServiceImplTest {
 	public void testRestrieveAllUsersFirst() {
 		List<User> listUsers = us.retrieveAllUsers();
 		int j = 0;
-		for (int i = 0; i < listUsers.size(); i++) {
+		for (int i = 0; i < us.retrieveAllUsers().size(); i++) {
 			j = j++;
 		}
 		Assertions.assertEquals(j, listUsers.size());

@@ -30,7 +30,9 @@ public class EntrepriseServiceImplTest {
 	@Test
 	@Order(2)
 	public void testAddEntreprise() throws ParseException {
-		Entreprise ent = new Entreprise("perolla", "jhutge2");
+		Long l = (long) (6 + IE.retrieveAllEntreprises().size());
+
+		Entreprise ent = new Entreprise(l,"perolla", "jhutge2");
 		Entreprise entAded = IE.addEntreprise(ent);
 		Assertions.assertEquals(ent.getName(), entAded.getName());
 	}
@@ -49,7 +51,8 @@ public class EntrepriseServiceImplTest {
 	@Test
 	@Order(4)
 	public void testUpdateEntreprise() throws ParseException {
-		Entreprise e = new Entreprise(1L, "MB", "1548dsf");
+		Long l = (long) (6 + IE.retrieveAllEntreprises().size());
+		Entreprise e = new Entreprise(l, "MB", "1548dsf");
 		Entreprise entAded = IE.addEntreprise(e);
 		Assertions.assertEquals(e.getName(), entAded.getName());
 	}
