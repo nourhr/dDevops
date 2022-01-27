@@ -27,12 +27,11 @@ public class UserServiceImplTest {
 	@Test
 	@Order(1)
 	public void testRestrieveAllUsersFirst() {
-		List<User> listUsers = us.retrieveAllUsers();
 		int j = 0;
 		for (int i = 0; i < us.retrieveAllUsers().size(); i++) {
 			j = j++;
 		}
-		Assertions.assertEquals(j, listUsers.size());
+		Assertions.assertEquals(j, us.retrieveAllUsers().size());
 	}
 
 	@Test
@@ -48,12 +47,11 @@ public class UserServiceImplTest {
 	@Test
 	@Order(3)
 	public void testRestrieveAllUsersSecond() {
-		List<User> listUsers = us.retrieveAllUsers();
 		int j = 0;
-		for (int i = 0; i < listUsers.size(); i++) {
+		for (int i = 0; i < us.retrieveAllUsers().size(); i++) {
 			j = j++;
 		}
-		Assertions.assertEquals(j, listUsers.size());
+		Assertions.assertEquals(j, us.retrieveAllUsers().size());
 	}
 
 	@Test
@@ -61,7 +59,7 @@ public class UserServiceImplTest {
 	public void testUpdateUser() throws ParseException {
 		SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
 		Date d = date.parse("2021-10-10");
-		User u = new User(1L, "BenAmor", "Mouhammed", d, Role.INGENIEUR);
+		User u = new User(1L, "BenAmor", "Nour", d, Role.INGENIEUR);
 		User userAdded = us.addUser(u);
 		Assertions.assertEquals(u.getLastName(), userAdded.getLastName());
 	}

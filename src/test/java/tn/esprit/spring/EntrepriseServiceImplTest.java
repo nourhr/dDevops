@@ -23,8 +23,11 @@ public class EntrepriseServiceImplTest {
 	@Test
 	@Order(1)
 	public void testRestrieveAllEntreprises() {
-		List<Entreprise> listEntreprises = IE.retrieveAllEntreprises();
-		Assertions.assertEquals(0, listEntreprises.size());
+		int j = 0;
+		for (int i = 0; i < IE.retrieveAllEntreprises().size(); i++) {
+			j = j++;
+		}
+		Assertions.assertEquals(j, IE.retrieveAllEntreprises().size());
 	}
 
 	@Test
@@ -39,12 +42,11 @@ public class EntrepriseServiceImplTest {
 	@Test
 	@Order(3)
 	public void testRestrieveAllEntreprisesSecond() {
-		List<Entreprise> listEnts = IE.retrieveAllEntreprises();
 		int j = 0;
-		for (int i = 0; i < listEnts.size(); i++) {
+		for (int i = 0; i < IE.retrieveAllEntreprises().size(); i++) {
 			j = j++;
 		}
-		Assertions.assertEquals(j, listEnts.size());
+		Assertions.assertEquals(j, IE.retrieveAllEntreprises().size());
 	}
 
 	@Test

@@ -26,12 +26,11 @@ public class ProduitServiceImplTest {
 	@Test
 	@Order(1)
 	public void testRetrieveAllProduct() {
-		List<Produit> produits = agent.retrieveAllProduit();
 		int j = 0;
 		for (int i = 0; i < agent.retrieveAllProduit().size(); i++) {
 			j = j++;
 		}
-		Assertions.assertEquals(1, produits.size());
+		Assertions.assertEquals(1, agent.retrieveAllProduit().size());
 	}
 
 	@Test
