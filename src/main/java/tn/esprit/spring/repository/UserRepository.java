@@ -2,16 +2,14 @@ package tn.esprit.spring.repository;
 
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import tn.esprit.spring.entities.User;
-
+@Repository
 public interface UserRepository extends  CrudRepository<User, Long> {
 
 	
 
-	// List<User> findByFirstName(String fname);
-	// List<User> findByLastName(String lname);
-	// List<User> findByIdGreaterThan(int lname);
 		
 //		@Query("SELECT MAX((e.id), 0) FROM User e") 
 //		Long getMaxId(); 
@@ -31,3 +29,4 @@ public interface UserRepository extends  CrudRepository<User, Long> {
 //		void insertUser(@Param("fn") String fn, @Param("ln") Integer ln, @Param("role") Integer role);
 	
 }
+//try

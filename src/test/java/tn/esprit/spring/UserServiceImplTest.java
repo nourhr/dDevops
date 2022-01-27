@@ -30,8 +30,7 @@ public class UserServiceImplTest {
 	@Order(1)
 	public void testRestrieveAllUsersFirst(){
 		List<User> listUsers = us.retrieveAllUsers();
-		Assertions.assertEquals(0, listUsers.size());
-		
+		Assertions.assertEquals(4, listUsers.size());	
 	}
 	@Test
 	@Order(2)
@@ -46,7 +45,7 @@ public class UserServiceImplTest {
 	@Order(3)
 	public void testRestrieveAllUsersSecond(){
 		List<User> listUsers = us.retrieveAllUsers();
-		Assertions.assertEquals(1, listUsers.size());
+		Assertions.assertEquals(4, listUsers.size());
 	}
 	@Test
 	@Order(4)
@@ -60,17 +59,16 @@ public class UserServiceImplTest {
 	@Test
 	@Order(5)
 	public void testRetrieveUser(){
-		User userRetieved = us.retrieveUser("1");
+		User userRetieved = us.retrieveUser("3");
 		Assertions.assertEquals(1L, userRetieved.getId());
 	}
 	@Test
 	@Order(6)
 	public void testDeletUser(){
-		us.deleteUser("1");
+		us.deleteUser("2");
 	
 		List<User> listUserss = us.retrieveAllUsers();
 		Assertions.assertEquals(0, listUserss.size());
 	}
 	//testgit
 }
-

@@ -41,12 +41,12 @@ public class UserServiceImpl implements IUserService  {
 	@Override
 	public User addUser(User u) {
 		
-		User u_saved = null; 
+		User uSaved = null; 
 		
 		try {
 			// TODO Log à ajouter en début de la méthode 
 			l.info("In Methode AddUser");
-			u_saved = userRepository.save(u); 
+			uSaved = userRepository.save(u); 
 			// TODO Log à ajouter à la fin de la méthode 
 			l.info("User added with succes"+u.getLastName());
 			
@@ -55,7 +55,7 @@ public class UserServiceImpl implements IUserService  {
 			l.error("error with Methode Add User : " + e); 
 		}
 		
-		return u_saved; 
+		return uSaved; 
 	}
 
 	@Override 

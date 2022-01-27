@@ -16,7 +16,7 @@ import javax.persistence.TemporalType;
 public class User implements Serializable{
 	
 	
-		
+		//com nour
 		
 		private static final long serialVersionUID = 1L;
 
@@ -88,7 +88,7 @@ public class User implements Serializable{
 			this.role = role;
 		}
 
-		
+		//this a new machine link working
 
 
 }
