@@ -41,14 +41,14 @@ Assertions.assertEquals(p.getName(),pAdded.getName());
 	@Order(3)
 	public void testRetrieveAllProductSecond(){
 		List<Produit> produits = agent.retrieveAllProduit();
-		Assertions.assertEquals(0,produits.size());
+		Assertions.assertEquals(1,produits.size());
 	}
 	@Test
 	@Order(4)
 	public void testUpdateProduct () throws ParseException{
 		SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
-		Date d = (Date) date.parse("2022-10-10");
-		Produit p = new Produit(1L,"Lait", "description", d);
+		Date d = (Date) date.parse("2022-10-11");
+		Produit p = new Produit(1L,"gel", "description gel", d);
 		Produit pAdded = agent.updateProduit(p);
 		Assertions.assertEquals(p.getName(),pAdded.getName());
 
