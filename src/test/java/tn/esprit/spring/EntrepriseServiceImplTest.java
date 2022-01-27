@@ -48,14 +48,14 @@ public class EntrepriseServiceImplTest {
 	public void  testUpdateEntreprise() throws ParseException {
 		Entreprise e = new Entreprise (1L,"MB","1548dsf");
 		Entreprise entAded = IE.addEntreprise(e);
-		Assertions.assertEquals(e.getName(), entAded.getStatutFiscal());
+		Assertions.assertEquals(e.getName(), entAded.getName());
 	}
 	
 	@Test
 	@Order(5)
 	public void testRetrieveEntreprise(){
 		Entreprise EntRetrived = IE.retrieveEntreprise((long) 3);
-		Assertions.assertEquals(1L, EntRetrived.getId());
+		Assertions.assertEquals(3L, EntRetrived.getId());
 	}
 	
 	@Test
@@ -64,7 +64,7 @@ public class EntrepriseServiceImplTest {
 		IE.deleteEntreprise((long)2);
 	
 		List<Entreprise> listEntreprises = IE.retrieveAllEntreprises();
-		Assertions.assertEquals(0, listEntreprises.size());
+		Assertions.assertEquals(1, listEntreprises.size());
 	}
 
 }

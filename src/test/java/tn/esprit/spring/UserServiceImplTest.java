@@ -16,9 +16,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 
 @SpringBootTest
@@ -60,7 +58,7 @@ public class UserServiceImplTest {
 	@Order(5)
 	public void testRetrieveUser(){
 		User userRetieved = us.retrieveUser("3");
-		Assertions.assertEquals(1L, userRetieved.getId());
+		Assertions.assertEquals(3L, userRetieved.getId());
 	}
 	@Test
 	@Order(6)
@@ -68,7 +66,6 @@ public class UserServiceImplTest {
 		us.deleteUser("2");
 	
 		List<User> listUserss = us.retrieveAllUsers();
-		Assertions.assertEquals(0, listUserss.size());
+		Assertions.assertEquals(1, listUserss.size());
 	}
-	//testgit
 }
