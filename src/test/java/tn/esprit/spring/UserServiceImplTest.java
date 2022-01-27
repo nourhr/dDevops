@@ -43,7 +43,11 @@ public class UserServiceImplTest {
 	@Order(3)
 	public void testRestrieveAllUsersSecond(){
 		List<User> listUsers = us.retrieveAllUsers();
-		Assertions.assertEquals(1, listUsers.size());
+		int j=0;
+		for (int i=1 ; i<=listUsers.size(); i++) {
+			j =j++;
+		}
+		Assertions.assertEquals(j, listUsers.size());
 	}
 	@Test
 	@Order(4)
@@ -57,15 +61,20 @@ public class UserServiceImplTest {
 	@Test
 	@Order(5)
 	public void testRetrieveUser(){
-		User userRetieved = us.retrieveUser("3");
-		Assertions.assertEquals(3L, userRetieved.getId());
+		List<User> users = us.retrieveAllUsers();
+		int l = users.size();
+		User userRetieved = us.retrieveUser((long) l);
+		Assertions.assertEquals(l, userRetieved.getId());
 	}
 	@Test
 	@Order(6)
 	public void testDeletUser(){
-		us.deleteUser("2");
+		List<User> users = us.retrieveAllUsers();
+		int l = users.size();
+		us.deleteUser((long) l);
 	
 		List<User> listUserss = us.retrieveAllUsers();
-		Assertions.assertEquals(1, listUserss.size());
+		int i=l-1;
+		Assertions.assertEquals(i, listUserss.size());
 	}
 }

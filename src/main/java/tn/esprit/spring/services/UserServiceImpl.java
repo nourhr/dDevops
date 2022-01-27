@@ -79,12 +79,12 @@ public class UserServiceImpl implements IUserService  {
 	}
 
 	@Override
-	public void deleteUser(String id) {
+	public void deleteUser(Long id) {
 		
 		try {
 			// TODO Log à ajouter en début de la méthode 
 			l.info("In Methode delete User:"+id);
-			userRepository.deleteById(Long.parseLong(id)); 
+			userRepository.deleteById(id); 
 			// TODO Log à ajouter à la fin de la méthode 
 			l.info("User  was deleted successfully");
 			
@@ -96,12 +96,12 @@ public class UserServiceImpl implements IUserService  {
 	}
 
 	@Override
-	public User retrieveUser(String id) {
+	public User retrieveUser(Long id) {
 		User u = null; 
 		try {
 			// TODO Log à ajouter en début de la méthode 
 			l.info("In Methode retrieve User:"+id);
-			u =  userRepository.findById(Long.parseLong(id)).get(); 
+			u =  userRepository.findById(id).get(); 
 			// TODO Log à ajouter à la fin de la méthode 
 			l.info("User retrieved");
 			
@@ -112,5 +112,8 @@ public class UserServiceImpl implements IUserService  {
 
 		return u; 
 	}
+
+
+	
 	
 }
