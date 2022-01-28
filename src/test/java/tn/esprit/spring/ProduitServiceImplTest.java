@@ -41,7 +41,7 @@ Assertions.assertEquals(p.getName(),pAdded.getName());
 	@Order(3)
 	public void testRetrieveAllProductSecond(){
 		List<Produit> produits = agent.retrieveAllProduit();
-		Assertions.assertEquals(0,produits.size());
+		Assertions.assertEquals(1,produits.size());
 	}
 	@Test
 	@Order(4)
@@ -56,13 +56,13 @@ Assertions.assertEquals(p.getName(),pAdded.getName());
 	@Test
 	@Order(5)
 	public void testRetrieveProduct (){
-		Produit p = agent.retrieveProduit(1L);
+		Produit p = agent.retrieveProduit((long) 3);
 		Assertions.assertEquals(1L, p.getIdProduit());
 	}
 	@Test
 	@Order(6)
 	public void testDeleteProduct (){
-		agent.deleteProduit(1L);
+		agent.deleteProduit((long)2);
 		List<Produit> listProduct = agent.retrieveAllProduit();
 		Assertions.assertEquals(0, listProduct.size());
 	}
