@@ -20,55 +20,60 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-
 @SpringBootTest
 @TestMethodOrder(OrderAnnotation.class)
 public class UserServiceImplTest {
 	@Autowired
 	IUserService us;
+
 	@Test
 	@Order(1)
-	public void testRestrieveAllUsersFirst(){
+	public void testRestrieveAllUsersFirst() {
 		List<User> listUsers = us.retrieveAllUsers();
-		Assertions.assertEquals(4, listUsers.size());	
+		Assertions.assertEquals(0, listUsers.size());
 	}
+
 	@Test
 	@Order(2)
-	public void  testAddUser() throws ParseException {
+	public void testAddUser() throws ParseException {
 		SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
 		Date d = date.parse("2021-10-10");
-		User u = new User ("Nour","Hermi",d,Role.INGENIEUR);
+		User u = new User("Nour", "Hermi", d, Role.INGENIEUR);
 		User userAdded = us.addUser(u);
 		Assertions.assertEquals(u.getLastName(), userAdded.getLastName());
 	}
+
 	@Test
 	@Order(3)
-	public void testRestrieveAllUsersSecond(){
+	public void testRestrieveAllUsersSecond() {
 		List<User> listUsers = us.retrieveAllUsers();
-		Assertions.assertEquals(4, listUsers.size());
+		Assertions.assertEquals(1, listUsers.size());
 	}
+
 	@Test
 	@Order(4)
-	public void  testUpdateUser() throws ParseException {
+	public void testUpdateUser() throws ParseException {
 		SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
 		Date d = date.parse("2021-10-10");
-		User u = new User (1L,"BenAmor","Mouhammed",d,Role.INGENIEUR);
+		User u = new User(1L, "BenAmor", "Mouhammed", d, Role.INGENIEUR);
 		User userAdded = us.addUser(u);
 		Assertions.assertEquals(u.getLastName(), userAdded.getLastName());
 	}
+
 	@Test
 	@Order(5)
-	public void testRetrieveUser(){
-		User userRetieved = us.retrieveUser("3");
+	public void testRetrieveUser() {
+		User userRetieved = us.retrieveUser("1");
 		Assertions.assertEquals(1L, userRetieved.getId());
 	}
+
 	@Test
 	@Order(6)
-	public void testDeletUser(){
-		us.deleteUser("2");
-	
+	public void testDeletUser() {
+		us.deleteUser("1");
+
 		List<User> listUserss = us.retrieveAllUsers();
 		Assertions.assertEquals(0, listUserss.size());
 	}
-	//testgit
+	// testgit
 }
