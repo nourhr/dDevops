@@ -16,9 +16,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 @TestMethodOrder(OrderAnnotation.class)
@@ -30,11 +28,7 @@ public class UserServiceImplTest {
 	@Order(1)
 	public void testRestrieveAllUsersFirst() {
 		List<User> listUsers = us.retrieveAllUsers();
-<<<<<<< HEAD
-		Assertions.assertEquals(0, listUsers.size());
-=======
 		Assertions.assertEquals(0, listUsers.size());	
->>>>>>> refs/remotes/origin/nour
 	}
 
 	@Test
@@ -53,11 +47,7 @@ public class UserServiceImplTest {
 		List<User> listUsers = us.retrieveAllUsers();
 		Assertions.assertEquals(1, listUsers.size());
 	}
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> refs/remotes/origin/nour
 	@Test
 	@Order(4)
 	public void testUpdateUser() throws ParseException {
@@ -70,32 +60,17 @@ public class UserServiceImplTest {
 
 	@Test
 	@Order(5)
-<<<<<<< HEAD
-	public void testRetrieveUser() {
-=======
 	public void testRetrieveUser(){
->>>>>>> refs/remotes/origin/nour
 		User userRetieved = us.retrieveUser("1");
 		Assertions.assertEquals(1L, userRetieved.getId());
 	}
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> refs/remotes/origin/nour
 	@Test
 	@Order(6)
-<<<<<<< HEAD
-	public void testDeletUser() {
-		us.deleteUser("1");
 
-=======
 	public void testDeletUser(){
 		us.deleteUser("1");
-	
->>>>>>> refs/remotes/origin/nour
-		List<User> listUserss = us.retrieveAllUsers();
+			List<User> listUserss = us.retrieveAllUsers();
 		Assertions.assertEquals(0, listUserss.size());
 	}
-	// testgit
 }
