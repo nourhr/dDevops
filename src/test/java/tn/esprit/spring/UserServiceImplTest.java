@@ -73,5 +73,5 @@ public class UserServiceImplTest {
 		List<User> listUserss = us.retrieveAllUsers();
 		Assertions.assertEquals(0, listUserss.size());
 	}
-	
+
 }
